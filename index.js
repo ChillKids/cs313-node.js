@@ -8,3 +8,10 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+app.get("/getRate", function(req, res) {
+    console.log("got a get");
+    var total = 0;
+    res.render('results', { total: total });
+
+});
