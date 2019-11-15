@@ -7,11 +7,5 @@ express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
+    .get('/getRate', (req, res) => res.render('results', { total: 0 }))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-.get("/getRate", function(req, res) {
-    console.log("got a get");
-    var total = 0;
-    res.render('results', { total: total });
-
-});
